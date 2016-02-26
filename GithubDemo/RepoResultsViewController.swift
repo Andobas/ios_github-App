@@ -95,6 +95,13 @@ class RepoResultsViewController: UIViewController, UITableViewDelegate, UITableV
             return 0
         }
     }
+   
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navController = segue.destinationViewController as! UINavigationController
+        let vc = navController.topViewController as! SearchSettingsViewController
+        vc.settings =  starsCount // ... Search Settings ...
+    }
 }
 
 // SearchBar methods
@@ -122,3 +129,4 @@ extension RepoResultsViewController: UISearchBarDelegate {
     }
     
 }
+
